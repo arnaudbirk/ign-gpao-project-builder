@@ -19,7 +19,7 @@ jobs:
         pip install pylint flake8
     - name: Analysing the code with pylint
       run: |
-        pylint ign_gpao_project_builder/__init__.py
+        pylint builder/__init__.py
     - name: Analysing the code with flake8
       run: |
         flake8 .
