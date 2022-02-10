@@ -4,6 +4,7 @@ import json
 
 from job import Job
 
+
 def handler(obj):
     """ handler """
     if isinstance(obj, Job):
@@ -11,8 +12,9 @@ def handler(obj):
         del dictionary["internal_id"]
 
         dictionary = {k: v for k, v in dictionary.items() if v}
-        return  dictionary
+        return dictionary
     return None
+
 
 class Project(object):
 
@@ -56,22 +58,25 @@ class Project(object):
         """ Get name of the project """
         return self.name
 
-    def reorganize_job_dependencies( project):
+    @staticmethod
+    def reorganize_job_dependencies(project):
         """ Reorganize job's id in deps list """
-        cpt=0
         for job in project.jobs:
             if job.deps:
                 for dep in job.deps:
-                    id = dep['id']
-                    dep['id'] = Project.find_job_index(project, id)  
-            cpt+=1
+                    job_id = dep['id']
+                    dep['id'] = Project.find_job_index(project, job_id)
 
-    def find_job_index(project, id):
-        cpt=0
+    @staticmethod
+    def find_job_index(project, job_id):
+        """ find job's index in project and return this position """
+        cpt = 0
         for job in project.jobs:
-            if job.get_internal_id() == id:
+            if job.get_internal_id() == job_id:
                 return cpt
-            cpt+=1
+            cpt += 1
+
+        return -1
 
     def to_json(self):
         """ Convert to json """

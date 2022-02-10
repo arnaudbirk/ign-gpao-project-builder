@@ -2,6 +2,7 @@
 
 import json
 
+
 class Job(object):
     """classe representant un job"""
 
