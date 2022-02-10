@@ -3,6 +3,7 @@
 import json
 from project import Project
 
+
 def handler(obj):
     """ handler"""
     dictionary = obj.__dict__.copy()
@@ -13,8 +14,9 @@ def handler(obj):
 
     return dictionary
 
+
 class Builder(object):
-    """classe permettant la construction d'un fichier json decrivant une GPAO"""
+    """ Builder of GPAO's json project """
 
     def __init__(self, projects=None):
         """constructeur"""
@@ -36,4 +38,10 @@ class Builder(object):
             Project.reorganize_job_dependencies(project)
             json_gpao["projects"].append(project)
         with open(file_json, "w") as fjson:
-            json.dump(json_gpao, fjson, default=handler, ensure_ascii=False, indent=4)
+            json.dump(
+                json_gpao,
+                fjson,
+                default=handler,
+                ensure_ascii=False,
+                indent=4
+                )
