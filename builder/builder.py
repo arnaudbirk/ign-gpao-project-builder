@@ -1,7 +1,7 @@
 """ Builder's class of the gpao """
 
 import json
-from project import Project
+from builder.project import Project
 
 
 def handler(obj):

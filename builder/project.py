@@ -2,7 +2,7 @@
 
 import json
 
-from job import Job
+from builder.job import Job
 
 
 def handler(obj):
