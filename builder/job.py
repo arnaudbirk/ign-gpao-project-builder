@@ -4,7 +4,7 @@ import json
 
 
 class Job(object):
-    """classe representant un job"""
+    """ Job's Class """
 
     cpt_id = 0
 
