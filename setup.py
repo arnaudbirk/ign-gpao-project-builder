@@ -20,6 +20,6 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
     ],
-    packages=["builder"],
+    packages=["gpao"],
     include_package_data=True,
 )
