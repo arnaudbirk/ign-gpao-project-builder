@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="ign-gpao-project-builder",
-    version="0.3.1",
+    version="0.4.0",
     description="Write a json's GPAO file",
     long_description_content_type="text/markdown",
     long_description=README,
