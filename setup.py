@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="ign-gpao-project-builder",
-    version="0.4.0",
+    version="0.4.1",
     description="Write a json's GPAO file",
     long_description_content_type="text/markdown",
     long_description=README,
@@ -18,7 +18,7 @@ setup(
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.8",
     ],
     packages=["gpao"],
     include_package_data=True,
